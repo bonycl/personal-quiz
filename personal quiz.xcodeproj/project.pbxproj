@@ -14,6 +14,9 @@
 		027822292B0F0B0F00D88BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027822282B0F0B0F00D88BBF /* Assets.xcassets */; };
 		0278222C2B0F0B0F00D88BBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0278222A2B0F0B0F00D88BBF /* LaunchScreen.storyboard */; };
 		027822342B0F1D0500D88BBF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027822332B0F1D0500D88BBF /* Question.swift */; };
+		0278223B2B0F1ECA00D88BBF /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0278223A2B0F1ECA00D88BBF /* ResponseType.swift */; };
+		0278223D2B0F1FBC00D88BBF /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0278223C2B0F1FBC00D88BBF /* Answer.swift */; };
+		0278223F2B0F202A00D88BBF /* AnimalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0278223E2B0F202A00D88BBF /* AnimalType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		0278222B2B0F0B0F00D88BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0278222D2B0F0B0F00D88BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		027822332B0F1D0500D88BBF /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		0278223A2B0F1ECA00D88BBF /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
+		0278223C2B0F1FBC00D88BBF /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		0278223E2B0F202A00D88BBF /* AnimalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				027822332B0F1D0500D88BBF /* Question.swift */,
+				0278223A2B0F1ECA00D88BBF /* ResponseType.swift */,
+				0278223C2B0F1FBC00D88BBF /* Answer.swift */,
+				0278223E2B0F202A00D88BBF /* AnimalType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,7 +193,10 @@
 				027822242B0F0B0E00D88BBF /* ViewController.swift in Sources */,
 				027822342B0F1D0500D88BBF /* Question.swift in Sources */,
 				027822202B0F0B0E00D88BBF /* AppDelegate.swift in Sources */,
+				0278223D2B0F1FBC00D88BBF /* Answer.swift in Sources */,
+				0278223B2B0F1ECA00D88BBF /* ResponseType.swift in Sources */,
 				027822222B0F0B0E00D88BBF /* SceneDelegate.swift in Sources */,
+				0278223F2B0F202A00D88BBF /* AnimalType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +350,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 962T2B7968;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "personal quiz/Info.plist";
+				INFOPLIST_FILE = "personal quiz/Supporting files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -366,7 +378,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 962T2B7968;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "personal quiz/Info.plist";
+				INFOPLIST_FILE = "personal quiz/Supporting files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
