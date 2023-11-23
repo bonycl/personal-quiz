@@ -26,13 +26,45 @@ class QuestionViewController: UIViewController {
     //MARK: - Private properties
     private let questions = Question.getQuestion()
     private var questionIndex = 0
-    
+    private var answersChoosen: [Answer] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
     }
     
+    
+    //MARK: - IBActions
+    @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
+        let currentAnswers = questions[questionIndex].answers
+        guard let currentIndex = singleButtons.firstIndex(of: sender) else { return }
+        let currentAnswer = currentAnswers[currentIndex]
+        answersChoosen.append(currentAnswer)
+        
+        nextQuestion()
+    }
+    
+    @IBAction func multipleAnswerButtonPressed() {
+        let currentAnswers = questions[questionIndex].answers
+        
+        for (multipleSwitch, answer) in zip(multipleSwitches, currentAnswers) {
+            if multipleSwitch.isOn {
+                answersChoosen.append(answer)
+            }
+        }
+        nextQuestion()
+    }
+    
+    @IBAction func rangedAnswersButtonPressed() {
+        let currentAnswers = questions[questionIndex].answers
+        let index = Int(round(rangedSlider.value) * Float(currentAnswers.count - 1))
+        answersChoosen.append(currentAnswers[index])
+        
+        nextQuestion()
+    }
+    
     //MARK: - Private methods
+    
+    
     //Update user interface
     private func updateUI() {
         for stackView in [singleStackView, multipleStackView, rangedStackView] {
@@ -74,6 +106,10 @@ class QuestionViewController: UIViewController {
     private func updateSingleStackView(using answers: [Answer]) {
         //show single stack view
         singleStackView.isHidden = false
+        
+        for (button, answer) in zip(singleButtons, answers) {
+            button.setTitle(answer.text, for: .normal)
+        }
     }
     
     /// Setup multiple stack view
@@ -83,6 +119,11 @@ class QuestionViewController: UIViewController {
     private func updateMultipleStackView(using answers: [Answer]) {
         //show single stack view
         multipleStackView.isHidden = false
+        
+        for (label, answer) in zip(multipleLabels, answers) {
+            label.text = answer.text
+             
+        }
     }
     
     /// Setup ranged stack view
@@ -92,6 +133,27 @@ class QuestionViewController: UIViewController {
     private func updateRangedStackView(using answers: [Answer]) {
         //show single stack view
         rangedStackView.isHidden = false
+        
+        rangedLabels.first?.text = answers.first?.text
+        rangedLabels.last?.text = answers.last?.text
     }
 
+    //MARK: - Navigation
+    //show next question or go to the next screen
+    private func nextQuestion() {
+        questionIndex += 1
+        
+        if questionIndex < questions.count {
+            updateUI()
+        } else {
+            performSegue(withIdentifier: "resultSegue", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "resultSegue" else { return }
+            let resultVC = segue.destination as! ResultsViewController
+            resultVC.responses = answersChoosen
+        
+    }
 }
