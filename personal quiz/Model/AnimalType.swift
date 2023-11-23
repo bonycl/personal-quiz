@@ -21,8 +21,7 @@ enum AnimalType: String {
             return "Ваша сила - в мудрости. Вы игрок на длинную дистанцию."
         case .rabbit:
             return "вам нравится все мягкое. Вы полны энергии."
-        default:
-            <#code#>
+        
         }
     }
 }
